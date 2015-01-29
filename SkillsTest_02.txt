@@ -1,0 +1,10 @@
+The first error log seems to indicate that WIN-FCO8N54P513 is not setup to handle the type of SSL request it is getting.
+A search on Google for "Event ID: 36874" seems to verify this assumption.
+
+The second error log seems to indicate that WIN-FCO8N54P513 is getting a request for a web method that does not exist. The URL requested was "https://www.googlemerchandisestore.com:443/shop.aspx/undefined?type=promotion&data=undefined". So the web method "undefined" could not be found and caused the exception to be generated.
+
+These errors together would suggest that an SSL request is being made to either get the name or data to determine the name of the web method. However that request fails, causing the generation of the invalid method name of "undefined".
+
+To attempt to solve this I would first attempt correct the setup of SSL on the WIN-FCO8N54P513.  Secondly if the IP address "71.85.104.49" is a machine under my control, I would attempt to correct the code that is handling the request for data as well as the code that is executing the web method call.
+
+To explain this to a "non-technical" staff member, I would say "HTTPS does not seem to be setup correctly causing the web page error".
