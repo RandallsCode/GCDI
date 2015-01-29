@@ -1,2 +1,0 @@
-# GCDI
-Information for GCDI
